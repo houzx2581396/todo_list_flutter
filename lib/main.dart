@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list_flutter/todo_list/add_mission.dart';
-import 'package:todo_list_flutter/todo_list/mission_item.dart';
 import 'package:todo_list_flutter/todo_list/mission_list.dart';
 
 void main() {

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MissionItem extends StatefulWidget {
-  const MissionItem({Key? key}) : super(key: key);
+  const MissionItem({Key? key, required this.isFinished, required this.mission})
+      : super(key: key);
+  final bool isFinished;
+  final String mission;
 
   @override
   _MissionItemState createState() => _MissionItemState();
@@ -19,7 +22,7 @@ class _MissionItemState extends State<MissionItem> {
           isFinished = !isFinished;
         });
       },
-      title: const Text('Hello World'),
+      title: Text(widget.mission),
       secondary: const Icon(Icons.home),
     );
   }

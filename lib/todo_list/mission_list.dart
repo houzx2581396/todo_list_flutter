@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list_flutter/todo_list/mission.dart';
 import 'package:todo_list_flutter/todo_list/mission_item.dart';
 
 class MissionList extends StatefulWidget {
@@ -9,7 +10,7 @@ class MissionList extends StatefulWidget {
 }
 
 class _MissionListState extends State<MissionList> {
-  List<String> mission = ['a', 'b'];
+  List<Mission> mission = [Mission(false, 'App'), Mission(false, 'backend')];
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,9 @@ class _MissionListState extends State<MissionList> {
       padding: const EdgeInsets.all(8),
       itemCount: mission.length,
       itemBuilder: (BuildContext context, int index) {
-        return const MissionItem();
+        return MissionItem(
+            isFinished: mission[index].isFinished,
+            mission: mission[index].mission);
       },
     );
   }
